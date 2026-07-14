@@ -41,6 +41,7 @@
   --line-body: 1.65;
   --button-height: 2.9rem;
   --button-height-sm: 2.35rem;
+  --icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M8 12.2l2.6 2.6L16 9.4'/%3E%3C/svg%3E");
   --transition: 180ms ease;
   --header-height: 4.875rem;
 }
