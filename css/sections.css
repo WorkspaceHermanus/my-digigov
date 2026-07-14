@@ -1,7 +1,7 @@
 .hero {
   background: var(--color-navy-dark);
   color: var(--color-surface);
-  min-height: clamp(39rem, 58vw, 45rem);
+  min-height: clamp(39rem, 58vw, 47.125rem); /* 754px */
   padding-block: 0;
   position: relative;
 }
@@ -24,7 +24,7 @@
   display: grid;
   gap: clamp(1rem, 3vw, 2.5rem);
   grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr);
-  min-height: clamp(39rem, 58vw, 45rem);
+  min-height: clamp(39rem, 58vw, 47.125rem); /* 754px */
   position: relative;
   z-index: 2;
 }
@@ -91,17 +91,23 @@
   width: clamp(16rem, 21vw, 20.5rem);
 }
 
+/* Vision carries more air below its cards than the other sections (measured 170px). */
+.vision {
+  padding-bottom: clamp(4.25rem, 13.8vw, 10.625rem);
+}
+
 .vision__cards {
   align-items: center;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 6rem;
 }
 
 .ecosystem-card {
   display: flex;
   flex-direction: column;
-  min-height: 13.8rem;
+  min-height: 19.8rem; /* 317px */
   padding: 1.45rem;
   text-align: center;
 }
@@ -160,7 +166,7 @@
 .ecosystem-card--center {
   background: linear-gradient(180deg, var(--color-navy), var(--color-navy-dark));
   border-color: rgba(255, 255, 255, 0.1);
-  min-height: 17.4rem;
+  min-height: 21.5rem; /* 345px */
   padding: 1.5rem 1.25rem;
 }
 
@@ -231,7 +237,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 1.6rem;
-  min-height: 12.9rem;
+  min-height: 15.625rem; /* 250px */
   padding: 1.6rem;
 }
 
@@ -297,17 +303,17 @@
 
 .service-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.375rem; /* 22px */
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .credentials {
-  padding-block: clamp(5rem, 8vw, 7rem);
+  padding-block: var(--section-space) clamp(4.25rem, 12.5vw, 9.625rem); /* 132 / 154 */
 }
 
 .credentials__intro {
   max-width: 600px;
-  margin-bottom: 2.2rem;
+  margin-bottom: 4.5rem; /* 72px */
 }
 
 .credentials__intro h2 {
@@ -316,7 +322,7 @@
 
 .process-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.7rem; /* 27px */
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -324,9 +330,9 @@
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(154, 204, 231, 0.17);
   border-radius: var(--radius-md);
-  min-height: 11.6rem;
+  min-height: 13.75rem; /* 220px */
   overflow: hidden;
-  padding: 1.2rem;
+  padding: 1.875rem 1.5rem; /* 30px top, measured */
   position: relative;
 }
 
@@ -343,20 +349,20 @@
 .process-card__icon {
   align-items: center;
   background: var(--color-green);
-  border-radius: 0.7rem;
+  border-radius: 1rem;
   color: var(--color-surface);
   display: flex;
-  height: 2.35rem;
+  height: 3.625rem; /* 58px */
   justify-content: center;
   margin-bottom: 1.5rem;
   position: relative;
-  width: 2.35rem;
+  width: 3.625rem;
   z-index: 1;
 }
 
 .process-card__icon svg {
-  height: 1.1rem;
-  width: 1.1rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .process-card h3 {
@@ -371,6 +377,10 @@
   line-height: 1.55;
 }
 
+.journey {
+  padding-bottom: clamp(4.25rem, 12.6vw, 9.6875rem); /* 155px */
+}
+
 .journey__inner {
   align-items: center;
   display: grid;
@@ -383,38 +393,47 @@
   max-width: 470px;
 }
 
+/* Constrained so the heading breaks after "with", as the mockup does. */
+.journey__copy h2 {
+  max-width: 22rem;
+}
+
 .journey__device {
   justify-self: center;
 }
 
+/* The mockup's journey phone is ~487px wide — far larger than the hero's. The screen is
+   laid out in rem, so zoom scales the whole device (frame and contents) together and,
+   unlike transform, still reserves the right amount of layout space. */
 .device-phone--wallet {
   width: clamp(16rem, 23vw, 19rem);
+  zoom: 1.6;
 }
 
 /* Layered architecture: each row is a stack layer, joined by a downward arrow. */
 .integration-stack {
   display: grid;
-  gap: 1.55rem;
+  gap: 2.375rem; /* 38px */
   margin-inline: auto;
-  max-width: 890px;
+  max-width: 894px;
 }
 
 .integration-row {
   align-items: center;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-card-soft);
   display: grid;
   gap: 0.85rem;
   grid-template-columns: auto 1fr auto;
-  min-height: 3.4rem;
-  padding: 0.62rem 0.9rem;
+  min-height: 4.75rem; /* 76px */
+  padding: 0.62rem 1.25rem;
   position: relative;
 }
 
 .integration-row:not(:last-child)::after {
-  bottom: -1.2rem;
+  bottom: -1.75rem;
   color: var(--color-border-strong);
   content: "↓";
   font-size: 0.85rem;
@@ -424,18 +443,21 @@
   transform: translateX(-50%);
 }
 
+/* Every layer carries the same sitemap glyph in the mockup, on a tinted tile. */
 .integration-row__icon {
   align-items: center;
-  color: var(--color-green);
+  background: var(--color-green-light);
+  border-radius: 0.65rem;
+  color: var(--color-green-dark);
   display: flex;
-  height: 1.6rem;
+  height: 2.25rem; /* 36px */
   justify-content: center;
-  width: 1.6rem;
+  width: 2.25rem;
 }
 
 .integration-row__icon svg {
-  height: 1rem;
-  width: 1rem;
+  height: 1.15rem;
+  width: 1.15rem;
 }
 
 .integration-row strong {
@@ -469,9 +491,13 @@
   border-color: var(--color-green);
 }
 
-.integration-row--green .integration-row__icon,
 .integration-row--green strong {
   color: var(--color-surface);
+}
+
+.integration-row--green .integration-row__icon {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-green-dark);
 }
 
 .integration-row--green .integration-row__tags span {
@@ -482,25 +508,25 @@
 
 .value-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem; /* 24px */
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .value-card {
-  min-height: 13.2rem;
+  min-height: 18.125rem; /* 290px */
 }
 
 .value-card ul {
   display: grid;
-  gap: 0.45rem;
-  margin-top: 0.75rem;
+  gap: 0.6rem; /* -> 30px item pitch */
+  margin-top: 1rem;
 }
 
 .value-card li {
   color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
+  font-size: 0.875rem; /* 14px */
   font-weight: 500;
-  padding-left: 1.3rem;
+  padding-left: 1.6rem;
   position: relative;
 }
 
@@ -508,45 +534,45 @@
 .value-card li::before {
   background-color: var(--color-green);
   content: "";
-  height: 0.85rem;
+  height: 1rem; /* 16px */
   left: 0;
   -webkit-mask: var(--icon-check) center / contain no-repeat;
   mask: var(--icon-check) center / contain no-repeat;
   position: absolute;
-  top: 0.28rem;
-  width: 0.85rem;
+  top: 0.2rem;
+  width: 1rem;
 }
 
 .roadmap-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem; /* 20px */
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .roadmap-card {
   align-items: center;
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
   grid-template-columns: auto 1fr;
-  min-height: 4.5rem;
-  padding: 0.9rem 1rem;
+  min-height: 6.25rem; /* 100px */
+  padding: 1rem 1.75rem;
   transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
 .roadmap-card > span {
   align-items: center;
   background: var(--color-green);
-  border-radius: 0.7rem;
+  border-radius: 0.85rem;
   color: var(--color-surface);
   display: flex;
-  height: 2.4rem;
+  height: 2.8125rem; /* 45px */
   justify-content: center;
-  width: 2.4rem;
+  width: 2.8125rem;
 }
 
 .roadmap-card svg {
-  height: 1.05rem;
-  width: 1.05rem;
+  height: 1.35rem;
+  width: 1.35rem;
 }
 
 .roadmap-card__label {
@@ -562,33 +588,37 @@
   font-size: 0.88rem;
 }
 
+.demo {
+  padding-block: var(--section-space) clamp(4.25rem, 12.5vw, 9.625rem); /* 132 / 154 */
+}
+
 .demo-timeline {
-  max-width: 860px;
+  max-width: 1045px;
 }
 
 .demo-timeline__steps {
   display: grid;
   gap: 0.7rem;
   grid-template-columns: repeat(5, 1fr);
-  margin-top: 2.4rem;
+  margin-top: 2.6rem;
   position: relative;
 }
 
 .demo-timeline__steps::before {
   background: var(--color-border-strong);
   content: "";
-  height: 2px;
-  left: 8%;
+  height: 1px;
+  left: 10%;
   position: absolute;
-  right: 8%;
-  top: 1.1rem;
+  right: 10%;
+  top: 1.40625rem; /* centre of the 45px step circle */
 }
 
 .demo-timeline__steps li {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 1.7rem;
   position: relative;
   text-align: center;
 }
@@ -600,11 +630,11 @@
   border-radius: 999px;
   color: var(--color-text-muted);
   display: flex;
-  font-size: 0.72rem;
-  font-weight: 900;
-  height: 2.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: 2.8125rem; /* 45px */
   justify-content: center;
-  width: 2.25rem;
+  width: 2.8125rem;
   z-index: 1;
 }
 
@@ -625,7 +655,7 @@
   flex-wrap: wrap;
   gap: 0.45rem;
   justify-content: center;
-  margin-top: 1.9rem;
+  margin-top: 5.9rem; /* 94px */
 }
 
 .demo-tags span {
@@ -633,25 +663,32 @@
   border: 1px solid var(--color-border);
   border-radius: 999px;
   color: var(--color-text-muted);
-  font-size: 0.66rem;
-  font-weight: 800;
-  padding: 0.38rem 0.7rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem; /* -> 34px tall */
 }
 
 .cta {
   background: var(--color-green);
   color: var(--color-surface);
-  padding-block: clamp(5.8rem, 10vw, 8.2rem);
+  padding-block: var(--section-space) clamp(4.25rem, 12.8vw, 9.875rem); /* 132 / 158 */
 }
 
 .cta__inner {
   text-align: center;
 }
 
+/* The CTA heading is deliberately larger than a section h2: 60px, not 48px. */
 .cta h2 {
   color: var(--color-surface);
-  font-size: var(--font-size-xl);
+  font-size: clamp(2.25rem, 1rem + 4vw, 3.75rem); /* 60px */
+  line-height: 1.1;
   margin-bottom: 1.1rem;
+}
+
+.cta .button {
+  min-height: 3.1875rem; /* 51px */
+  padding-inline: 1.6rem;
 }
 
 .cta p {

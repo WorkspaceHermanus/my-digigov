@@ -217,7 +217,63 @@ the mockup.
 
 ---
 
-## 4. Known gaps — not yet closed
+## 4. Vertical rhythm and component sizing
+
+The copy and components were right after the first pass, but everything was **too tight
+vertically**: the page measured **8524px** at 1920 against the mockup's **10170px**.
+
+I measured the mockup at 100% zoom (1 screenshot px ≈ 0.8 design px) and reconstructed
+every section boundary. The reconstruction sums to **10170**, exactly the Figma frame
+height, which confirms the numbers rather than merely estimating them.
+
+| Section | Mockup start | Mockup height | Before | After |
+|---|---|---|---|---|
+| Header | 0 | 78 | 78 | 78 |
+| Hero | 78 | 754 | 720 | 754 |
+| Vision | 832 | 968 | 829 | 968 |
+| Problem | 1800 | 786 | 705 | 779 |
+| Solution | 2586 | 900 | 837 | 898 |
+| How it works | 3486 | 805 | 653 | 804 |
+| Journey | 4291 | 1160 | 790 | 1161 |
+| Architecture | 5451 | 1264 | 973 | 1258 |
+| Benefits | 6715 | 762 | 670 | 757 |
+| Roadmap | 7477 | 762 | 656 | 766 |
+| Proof of concept | 8239 | 793 | 618 | 793 |
+| CTA | 9032 | 758 | 566 | 755 |
+| Footer | 9790 | 380 | 430 | 373 |
+| **Total** | | **10170** | **8524** | **10144** |
+
+Every section is now within ±7px of the mockup, and the page as a whole within 26px
+across 10,170 — inside my ±2px-per-boundary measurement error.
+
+### What was wrong
+
+- **`h2` sat flush against its lead paragraph.** No margin at all, where the mockup leaves
+  32px. This compounded across nine sections and was the single largest cause of the
+  shortfall. Fixed with `h2 + p`, scoped so headings with no lead (Benefits) are unaffected.
+- **`h2` line-height was 1.1; the mockup is 1.0** (48px pitch on a 48px font).
+- **Section padding was 116px; the mockup uses ~132px** (Vision, How-it-works, Journey,
+  Proof-of-concept and CTA carry a deeper 154–170px bottom).
+- **The CTA heading is 60px, not 48px** — it is deliberately larger than a section `h2`.
+  My first pass had wrongly folded it into the shared `h2` token.
+- **The journey timeline had the wrong structure.** The mockup runs a vertical rail with
+  the dot on it and the **time stacked above the title**; the live build put the time in a
+  left-hand column beside the title. Rebuilt, at the measured 104px item pitch.
+- **The journey phone is ~487 × 835.** Mine was 304px wide. Now scaled to 486 × 844.
+- **Every architecture row uses the same sitemap glyph** on a tinted tile. The live build
+  used seven different icons with no tile. Added a `sitemap` symbol and pointed all rows at it.
+- **The footer was the one section that was too *tall*** — a 44px `min-height` on the links
+  against the mockup's 30px pitch. Reduced to 30px, with the 44px touch target restored
+  under `@media (pointer: coarse)`, where it actually matters.
+- Component sizes corrected throughout: process cards 186→220 (icon 38→58), value cards
+  211→290 (icon 37→48, circular), roadmap cards 72→100 (icon 38→45), architecture rows
+  54→76 (gap 25→38), ecosystem cards 221→317 (centre 278→345), dashboard card 206→250,
+  step circles 36→45, service icon tiles 37→41.
+- Two rendering defects found on the way: the CPD note in the journey phone was a flex
+  container whose **bare text nodes became separate flex items**, fragmenting the sentence;
+  and stylesheets had no cache-busting, so deploys served stale CSS.
+
+## 5. Known gaps — not yet closed
 
 Stated plainly rather than left to be discovered:
 

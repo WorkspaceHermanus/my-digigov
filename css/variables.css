@@ -21,7 +21,9 @@
   --container: 1200px;
   --container-narrow: 760px;
   --container-fit: 920px;
-  --section-space: clamp(4.25rem, 7vw, 7.25rem);
+  /* Measured off the mockup: section padding is a consistent ~132px, reached by 1232px
+     (the width at which the 1200px container stops shrinking), same as the type scale. */
+  --section-space: clamp(4.25rem, 10.7vw, 8.25rem); /* 132px */
   --section-space-tight: clamp(3.5rem, 5vw, 5.75rem);
   --radius-xs: 0.45rem;
   --radius-sm: 0.65rem;
@@ -40,8 +42,8 @@
   --font-size-lg: clamp(1.25rem, 1rem + 1vw, 1.625rem); /* 26px */
   --font-size-xl: clamp(1.9rem, 1rem + 3vw, 3rem); /* 48px */
   --font-size-hero: clamp(2.7rem, 1.2rem + 5.5vw, 5rem); /* 80px */
-  --line-tight: 0.95;
-  --line-heading: 1.1;
+  --line-tight: 0.95; /* h1: 80px font, 76px pitch */
+  --line-heading: 1; /* h2: 48px font, 48px pitch — measured, not 1.1 */
   --line-body: 1.6;
   --button-height: 2.9rem;
   --button-height-sm: 2.35rem;

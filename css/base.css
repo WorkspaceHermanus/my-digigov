@@ -53,6 +53,14 @@ section {
   text-align: center;
 }
 
+/* The mockup leaves ~32px between a section heading and its lead paragraph.
+   Scoped to `h2 + p` so headings with no lead (e.g. Benefits) are unaffected. */
+.section__intro h2 + p,
+.experience__copy h2 + p,
+.credentials__intro h2 + p {
+  margin-top: 1.75rem;
+}
+
 h1,
 h2,
 h3 {

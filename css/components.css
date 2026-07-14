@@ -163,7 +163,7 @@
 .device-phone__screen {
   background: var(--color-surface);
   border-radius: 1.55rem;
-  min-height: 33rem;
+  min-height: 30.5rem;
   overflow: hidden;
   padding: 0.72rem;
 }
@@ -205,12 +205,22 @@
 .service-card svg,
 .value-card svg {
   background: var(--color-green-light);
-  border-radius: 0.7rem;
-  color: var(--color-green);
-  height: 2.3rem;
+  color: var(--color-green-dark);
   margin-bottom: 1rem;
-  padding: 0.55rem;
-  width: 2.3rem;
+  padding: 0.6rem;
+}
+
+/* Service tiles are rounded squares in the mockup; benefit tiles are circles. */
+.service-card svg {
+  border-radius: 0.75rem;
+  height: 2.5625rem; /* 41px */
+  width: 2.5625rem;
+}
+
+.value-card svg {
+  border-radius: 999px;
+  height: 3rem; /* 48px */
+  width: 3rem;
 }
 
 .service-card h3,
@@ -247,14 +257,15 @@
   align-items: center;
   display: flex;
   gap: 0.85rem;
-  margin-block: 1.35rem 1.8rem;
+  margin-block: 1.75rem 2.2rem;
 }
 
 .profile img {
   border: 3px solid var(--color-green-light);
   border-radius: 999px;
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 4rem; /* 64px */
+  object-fit: cover;
+  width: 4rem;
 }
 
 .profile strong,
@@ -275,59 +286,58 @@
   font-weight: 700;
 }
 
+/* Mockup timeline: a vertical rail with a dot per entry, and the time stacked ABOVE the
+   title (not beside it). Measured item pitch is 104px. */
 .timeline {
   display: grid;
-  gap: 0.7rem;
+  gap: 2.5rem; /* -> 104px pitch */
 }
 
 .timeline-item {
-  display: grid;
-  gap: 0.85rem;
-  grid-template-columns: 4.1rem 1fr;
+  padding-left: 2rem; /* content sits 32px from the container edge */
   position: relative;
 }
 
-.timeline-item:not(:last-child)::after {
-  background: var(--color-green-light);
+.timeline-item::before {
+  background: var(--color-green);
+  border-radius: 999px;
   content: "";
-  height: calc(100% + 0.7rem);
-  left: 4.55rem;
+  height: 0.625rem; /* 10px dot */
+  left: 0.5625rem; /* centred on the rail at 14px */
   position: absolute;
-  top: 1.1rem;
-  width: 2px;
+  top: 0.2rem;
+  width: 0.625rem;
+  z-index: 1;
+}
+
+.timeline-item:not(:last-child)::after {
+  background: var(--color-border-strong);
+  content: "";
+  bottom: -2.5rem;
+  left: 0.84rem;
+  position: absolute;
+  top: 0.85rem;
+  width: 1px;
 }
 
 .timeline-item time {
   color: var(--color-green-dark);
-  font-size: var(--font-size-xs);
-  font-weight: 900;
-  padding-top: 0.08rem;
-}
-
-.timeline-item div {
-  position: relative;
-}
-
-.timeline-item div::before {
-  background: var(--color-green);
-  border: 3px solid var(--color-green-light);
-  border-radius: 999px;
-  content: "";
-  height: 0.85rem;
-  left: -1.15rem;
-  position: absolute;
-  top: 0.22rem;
-  width: 0.85rem;
-  z-index: 1;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
 }
 
 .timeline-item h3 {
-  font-size: 0.95rem;
+  font-size: 1.125rem; /* 18px */
+  margin-top: 0.3rem;
 }
 
 .timeline-item p {
-  font-size: var(--font-size-xs);
-  line-height: 1.45;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+  margin-top: 0.2rem;
 }
 
 .timeline-badge {
@@ -518,6 +528,10 @@
   width: 0.8rem;
 }
 
+.phone-note span {
+  flex: 1;
+}
+
 .phone-note strong {
   font-weight: 700;
 }
@@ -538,11 +552,13 @@
 .brand--footer {
   background: var(--color-surface);
   border-radius: var(--radius-sm);
-  padding: 0.5rem 0.85rem;
+  min-height: 2.625rem; /* 42px */
+  padding: 0.5rem 0.875rem;
+  width: 11rem; /* 176px */
 }
 
 .brand--footer .brand__logo {
-  width: 8.5rem;
+  width: 9.25rem; /* 148px */
 }
 
 .brand--footer,
@@ -573,13 +589,15 @@
   text-transform: uppercase;
 }
 
+/* Mockup footer links sit on a 30px pitch. The 44px touch target is kept for
+   coarse pointers (see responsive.css), where it actually matters. */
 .footer__column a,
 .footer__column span {
   align-items: center;
   color: rgba(255, 255, 255, 0.66);
   display: flex;
   font-size: var(--font-size-sm);
-  min-height: 2.75rem;
+  min-height: 1.875rem; /* 30px */
   transition: color var(--transition);
 }
 

@@ -1,3 +1,11 @@
+/* Restore a proper touch target where the pointer is coarse. */
+@media (pointer: coarse) {
+  .footer__column a,
+  .footer__column span {
+    min-height: 2.75rem;
+  }
+}
+
 @media (max-width: 1100px) {
   .primary-nav__list {
     gap: 0.8rem;
@@ -97,6 +105,11 @@
   .hero__phone,
   .device-phone--wallet {
     width: min(100%, 18rem);
+  }
+
+  /* The 1.6x journey phone is a desktop-only detail from the mockup. */
+  .device-phone--wallet {
+    zoom: 1;
   }
 
   .vision__cards,
