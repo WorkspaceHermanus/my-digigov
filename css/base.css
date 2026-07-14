@@ -1,0 +1,152 @@
+body {
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-body);
+  overflow-x: hidden;
+}
+
+main {
+  overflow: hidden;
+}
+
+section {
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: min(100% - 2rem, var(--container-narrow));
+}
+
+.container--fit {
+  width: min(100% - 2rem, var(--container-fit));
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.section--white {
+  background: var(--color-surface);
+}
+
+.section--soft {
+  background: var(--color-background);
+}
+
+.section--navy {
+  background: var(--color-navy);
+  color: var(--color-surface);
+}
+
+.section__intro {
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.section__intro--center {
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-navy-dark);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+h1 {
+  font-size: var(--font-size-hero);
+  line-height: var(--line-tight);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-heading);
+}
+
+h3 {
+  font-size: var(--font-size-md);
+  line-height: 1.2;
+}
+
+h1 span,
+h2 span,
+h3 span {
+  color: var(--color-green);
+}
+
+p {
+  color: var(--color-text-muted);
+}
+
+.section--navy h2,
+.section--navy h3,
+.section--navy p {
+  color: var(--color-surface);
+}
+
+.section--navy p {
+  opacity: 0.78;
+}
+
+.eyebrow {
+  color: var(--color-green-dark);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+  text-transform: uppercase;
+}
+
+.eyebrow--light {
+  color: #86dfab;
+}
+
+.skip-link {
+  background: var(--color-green);
+  border-radius: 999px;
+  color: var(--color-navy-dark);
+  font-weight: 800;
+  left: 1rem;
+  padding: 0.7rem 1rem;
+  position: fixed;
+  top: 1rem;
+  transform: translateY(-140%);
+  transition: transform var(--transition);
+  z-index: 200;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(57, 184, 111, 0.55);
+  outline-offset: 4px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

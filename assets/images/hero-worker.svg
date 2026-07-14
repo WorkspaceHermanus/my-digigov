@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 780" role="img" aria-labelledby="title desc">
+  <title id="title">Public servant using a secure mobile credential</title>
+  <desc id="desc">A stylized dark photographic scene of a government employee holding a phone.</desc>
+  <defs>
+    <linearGradient id="scene" x1="0" x2="1" y1="0" y2="0">
+      <stop stop-color="#0a213f"/>
+      <stop offset=".54" stop-color="#123d69"/>
+      <stop offset="1" stop-color="#0a213f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".38" cy=".38" r=".6">
+      <stop stop-color="#5e8ab2" stop-opacity=".5"/>
+      <stop offset=".62" stop-color="#244968" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#071b34" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="780" fill="url(#scene)"/>
+  <rect width="1600" height="780" fill="url(#glow)"/>
+  <g opacity=".26" filter="url(#blur)">
+    <circle cx="250" cy="170" r="115" fill="#eef4f7"/>
+    <circle cx="580" cy="112" r="76" fill="#39b86f"/>
+    <circle cx="1170" cy="240" r="95" fill="#eef4f7"/>
+    <circle cx="880" cy="610" r="130" fill="#39b86f"/>
+  </g>
+  <g opacity=".36">
+    <rect x="842" y="0" width="6" height="780" fill="#c4d7e5"/>
+    <rect x="1014" y="0" width="4" height="780" fill="#c4d7e5"/>
+    <rect x="1196" y="0" width="5" height="780" fill="#c4d7e5"/>
+    <rect x="0" y="590" width="1320" height="2" fill="#c4d7e5"/>
+  </g>
+  <g transform="translate(134 70)">
+    <path d="M116 596c19-113 92-183 174-196 92-15 188 26 232 196H116z" fill="#e5eef4" opacity=".72"/>
+    <path d="M186 580c21-106 72-158 140-166 68-7 140 43 170 166H186z" fill="#0d2f5f" opacity=".36"/>
+    <circle cx="304" cy="210" r="118" fill="#e8edf1" opacity=".8"/>
+    <path d="M180 206c11-96 80-154 157-144 73 10 116 68 115 152-88 4-162-27-224-88-15 31-30 55-48 80z" fill="#0a1727" opacity=".75"/>
+    <path d="M196 300c44 78 148 102 221 42 18 45 19 91-2 142-76 42-168 39-236-9-30-61-25-118 17-175z" fill="#f4f8fb" opacity=".72"/>
+  </g>
+  <g transform="translate(814 290) rotate(-13)">
+    <path d="M65 250c-30-18-40-58-20-87l93-135c18-26 54-32 80-13l4 3c24 18 29 52 12 76L138 228c-17 25-49 34-73 22z" fill="#aa7251" opacity=".84"/>
+    <rect x="137" y="4" width="122" height="218" rx="23" fill="#071b34"/>
+    <rect x="151" y="22" width="94" height="178" rx="16" fill="#0d2f5f"/>
+    <circle cx="198" cy="184" r="6" fill="#39b86f"/>
+    <path d="M170 55h57M170 77h44M170 112h58M170 134h37" stroke="#9fc4d7" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+  </g>
+</svg>

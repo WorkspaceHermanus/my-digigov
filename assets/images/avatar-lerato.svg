@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Lerato Nkosi avatar</title>
+  <desc id="desc">A friendly illustrated portrait of a public servant.</desc>
+  <defs>
+    <linearGradient id="bg" x1="12" x2="84" y1="10" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e9f8ef"/>
+      <stop offset="1" stop-color="#d7ebf4"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="48" fill="url(#bg)"/>
+  <circle cx="48" cy="38" r="22" fill="#192f4e"/>
+  <path d="M27 79c4-16 15-24 21-24s17 8 21 24" fill="#39b86f"/>
+  <path d="M31 80c4-11 11-17 17-17s13 6 17 17" fill="#0d2f5f" opacity=".22"/>
+  <circle cx="48" cy="43" r="17" fill="#8f5638"/>
+  <path d="M31 41c3-16 13-23 24-18 8 4 12 10 10 22-7-1-17-6-23-13-2 5-5 8-11 9z" fill="#14213a"/>
+  <circle cx="41" cy="44" r="2" fill="#091b2e"/>
+  <circle cx="55" cy="44" r="2" fill="#091b2e"/>
+  <path d="M42 53c4 3 8 3 12 0" fill="none" stroke="#4d271d" stroke-width="3" stroke-linecap="round"/>
+  <path d="M36 62c7 5 17 5 24 0" fill="#f4f8fb"/>
+</svg>
