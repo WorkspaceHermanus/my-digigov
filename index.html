@@ -35,12 +35,10 @@
   <!-- Header / Navigation -->
   <header class="site-header" data-site-header>
     <div class="container header__inner">
-      <!--<a class="brand" href="#home" aria-label="MyDigiGovSA home">
-        <span class="brand__mark" aria-hidden="true">my</span>
-        <span class="brand__name">DigiGov<span>SA</span></span>
-      </a>-->
-      <span class="brand__mark"><img src="assets/images/My-DigiGovSA-Logo.png" alt="" srcset=""
-          style="width:50%;"></span>
+      <a class="brand" href="#home" aria-label="MyDigiGovSA home">
+        <img class="brand__logo" src="assets/images/My-DigiGovSA-Logo.png" alt="MyDigiGovSA" width="234"
+          height="40" />
+      </a>
 
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="primary-navigation"
         aria-expanded="false" data-nav-toggle>
@@ -51,131 +49,80 @@
 
       <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation" data-primary-nav>
         <ul class="primary-nav__list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#vision">Our Vision</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#get-involved">Get Involved</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#impact">Benefits</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+          <li><a href="#journey">Demo</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#get-involved">Executive Mandate</a></li>
         </ul>
       </nav>
 
-      <a class="button button--green header__cta" href="#get-involved">Launch App</a>
+      <a class="button button--green header__cta" href="#get-involved">
+        Request Demo
+        <svg class="button__icon" aria-hidden="true">
+          <use href="assets/icons/icon-sprite.svg#arrow-right"></use>
+        </svg>
+      </a>
     </div>
   </header>
 
   <main id="main">
     <!-- Hero Section -->
-    <section class="hero section" id="home" aria-labelledby="hero-title"
-      style="background: url('assets/images/HERO-bg-design.jpg') no-repeat top center; background-size: contain;">
-      <!--<div class="hero__background" aria-hidden="true"></div>
-      <div class="hero__flag" aria-hidden="true">
-        <span class="hero__flag-red"></span>
-        <span class="hero__flag-blue"></span>
-        <span class="hero__flag-white-top"></span>
-        <span class="hero__flag-white-bottom"></span>
-        <span class="hero__flag-green"></span>
-        <span class="hero__flag-gold"></span>
-        <span class="hero__flag-black"></span>
-      </div>-->
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="hero__background" aria-hidden="true"></div>
 
       <div class="container hero__inner">
         <div class="hero__copy reveal">
-          <!--<p class="eyebrow eyebrow--light">MyDigiGovSA</p>-->
           <h1 class="hero__title" id="hero-title">
             Empowering<br />
             Those Who<br />
             <span>Serve South Africa</span>
           </h1>
           <p class="hero__lead">
-            MyDigiGovSA is the trusted digital workplace for South Africa's public servants -
-            bringing together verified identity, credentials, self-services and AI in one secure
-            experience built on DigiGovSA.
+            MyDigiGovSA is the trusted digital workplace for South Africa's public
+            servants&mdash;bringing together verified identity, credentials, HR services and AI into
+            one secure experience built on DigiGovSA.
           </p>
           <div class="hero__actions">
-            <a class="button button--green" href="#vision">Explore the Platform</a>
-            <a class="button button--light" href="#how-it-works">
+            <a class="button button--green" href="#journey">
+              Follow Nomsa's Journey
+              <svg class="button__icon" aria-hidden="true">
+                <use href="assets/icons/icon-sprite.svg#arrow-right"></use>
+              </svg>
+            </a>
+            <a class="button button--white" href="#how-it-works">
               <svg class="button__icon" aria-hidden="true">
                 <use href="assets/icons/icon-sprite.svg#play"></use>
               </svg>
-              View How It Works
+              Watch 3 Minute Demo
             </a>
           </div>
           <ul class="hero__trust" aria-label="Platform trust indicators">
             <li>
               <svg aria-hidden="true">
-                <use href="assets/icons/icon-sprite.svg#shield-check"></use>
+                <use href="assets/icons/icon-sprite.svg#phone"></use>
               </svg>
-              Verified credentials
+              Mobile Accessible
             </li>
             <li>
               <svg aria-hidden="true">
-                <use href="assets/icons/icon-sprite.svg#lock"></use>
+                <use href="assets/icons/icon-sprite.svg#award"></use>
               </svg>
-              Secure workplace
+              Verified Credentials
             </li>
             <li>
               <svg aria-hidden="true">
-                <use href="assets/icons/icon-sprite.svg#network"></use>
+                <use href="assets/icons/icon-sprite.svg#person"></use>
               </svg>
-              Connected services
+              Employee First
             </li>
           </ul>
         </div>
 
         <div class="hero__art reveal" data-reveal-delay="120">
-          <div class="device-phone device-phone--hero" aria-label="MyDigiGovSA mobile app preview">
-            <!--<div class="device-phone__shell">
-                <div class="device-phone__screen">
-                  <div class="phone-status" aria-hidden="true">
-                    <span>09:41</span>
-                    <span></span>
-                  </div>
-                  <div class="app-header app-header--dark">
-                    <span>myDigiGov<span>SA</span></span>
-                    <small>Public servant wallet</small>
-                  </div>
-                  <section class="credential-card credential-card--dark" aria-label="Credential preview">
-                    <div class="credential-card__top">
-                      <span class="credential-card__crest">SA</span>
-                      <span class="status-pill status-pill--green">Verified</span>
-                    </div>
-                    <h2>National Treasury</h2>
-                    <p>Senior Administration Officer</p>
-                    <div class="credential-card__meta">
-                      <span>ID 8245</span>
-                      <span>Active</span>
-                    </div>
-                  </section>
-                  <div class="quick-grid" aria-label="Quick app actions">
-                    <span>Leave</span>
-                    <span>Payroll</span>
-                    <span>Learn</span>
-                    <span>Support</span>
-                  </div>
-                  <div class="app-list">
-                    <article class="app-list-item">
-                      <span class="app-list-item__icon"></span>
-                      <div>
-                        <strong>Staff access approved</strong>
-                        <small>Credential checked today</small>
-                      </div>
-                    </article>
-                    <article class="app-list-item">
-                      <span class="app-list-item__icon"></span>
-                      <div>
-                        <strong>Training reminder</strong>
-                        <small>Cybersecurity module due</small>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>-->
-            <!-- Mobile App Image -->
-
-            <img src="assets/images/Lerato-profile-01.png" alt="MyDigiGovSA Mobile App Image" />
-          </div>
+          <img class="hero__phone" src="assets/images/Lerato-profile-01.png" width="738" height="1355"
+            alt="The MyDigiGovSA app showing Lerato's verified employee credential, quick actions and AI assistant." />
         </div>
       </div>
     </section>
@@ -418,7 +365,7 @@
     </section>
 
     <!-- Lerato Journey Section -->
-    <section class="section section--white journey" aria-labelledby="journey-title">
+    <section class="section section--white journey" id="journey" aria-labelledby="journey-title">
       <div class="container journey__inner">
         <div class="journey__copy reveal">
           <p class="eyebrow">A day in service</p>
@@ -667,7 +614,7 @@
     </section>
 
     <!-- Roadmap Section -->
-    <section class="section section--soft roadmap" aria-labelledby="roadmap-title">
+    <section class="section section--soft roadmap" id="roadmap" aria-labelledby="roadmap-title">
       <div class="container container--narrow section__intro section__intro--center reveal">
         <p class="eyebrow">Strategic alignment</p>
         <h2 id="roadmap-title">

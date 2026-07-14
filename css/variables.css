@@ -18,7 +18,7 @@
   --shadow-card: 0 18px 45px rgba(13, 47, 95, 0.1);
   --shadow-card-soft: 0 10px 30px rgba(13, 47, 95, 0.08);
   --shadow-device: 0 22px 40px rgba(4, 19, 40, 0.28);
-  --container: 1180px;
+  --container: 1200px;
   --container-narrow: 760px;
   --container-fit: 920px;
   --section-space: clamp(4.25rem, 7vw, 7.25rem);
@@ -42,5 +42,5 @@
   --button-height: 2.9rem;
   --button-height-sm: 2.35rem;
   --transition: 180ms ease;
-  --header-height: 4.4rem;
+  --header-height: 4.875rem;
 }

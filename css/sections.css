@@ -8,9 +8,9 @@
 
 .hero__background {
   background-image:
-    linear-gradient(90deg, rgba(6, 27, 54, 0.96), rgba(8, 36, 72, 0.87) 46%, rgba(8, 36, 72, 0.18) 74%),
-    url("../assets/images/hero-worker.svg");
-  background-position: center left;
+    linear-gradient(90deg, rgba(6, 27, 54, 0.92) 0%, rgba(8, 36, 72, 0.78) 38%, rgba(8, 36, 72, 0.25) 60%, rgba(8, 36, 72, 0) 76%),
+    url("../assets/images/HERO-bg-design.jpg");
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   inset: 0;
@@ -138,15 +138,16 @@
 }
 
 .hero__art {
-  justify-self: left;
+  justify-self: center;
   position: relative;
-  margin-top: -5.5rem;
   z-index: 3;
 }
 
-.device-phone--hero {
-  transform: translateY(0.2rem);
-  width: clamp(15rem, 20vw, 18rem);
+.hero__phone {
+  display: block;
+  filter: drop-shadow(0 30px 60px rgba(4, 19, 40, 0.45));
+  height: auto;
+  width: clamp(16rem, 21vw, 20.5rem);
 }
 
 .vision__cards {

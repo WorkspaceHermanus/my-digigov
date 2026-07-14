@@ -62,6 +62,12 @@
   min-height: 2.75rem;
 }
 
+.brand__logo {
+  display: block;
+  height: auto;
+  width: 14.625rem;
+}
+
 .brand__mark {
   color: var(--color-navy-dark);
   font-size: 0.86rem;
