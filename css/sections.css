@@ -83,14 +83,15 @@
   align-items: center;
   display: grid;
   gap: clamp(1rem, 3vw, 2.5rem);
-  grid-template-columns: minmax(0, 1.08fr) minmax(16rem, 0.72fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr);
   min-height: clamp(39rem, 58vw, 45rem);
   position: relative;
   z-index: 2;
 }
 
+/* Wide enough to keep "Serve South Africa" on one line at the mockup's 80px h1. */
 .hero__copy {
-  max-width: 44rem;
+  max-width: 47rem;
   padding-block-start: clamp(0.5rem, 1vw, 2.5rem);
   padding-block-end: clamp(4rem, 8vw, 7rem);
 }
@@ -268,6 +269,11 @@
   margin-bottom: 2.4rem;
 }
 
+/* Constrained so the heading breaks before "Experience", as it does in the mockup. */
+.experience__copy h2 {
+  max-width: 40rem;
+}
+
 .experience__copy p {
   max-width: 34rem;
 }
@@ -360,7 +366,7 @@
 }
 
 .credentials__intro {
-  max-width: 540px;
+  max-width: 600px;
   margin-bottom: 2.2rem;
 }
 
@@ -704,7 +710,7 @@
 
 .cta h2 {
   color: var(--color-surface);
-  font-size: clamp(2.3rem, 1.4rem + 3.2vw, 4.15rem);
+  font-size: var(--font-size-xl);
   margin-bottom: 1.1rem;
 }
 
