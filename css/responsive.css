@@ -14,7 +14,7 @@
   }
 
   .footer__grid {
-    grid-template-columns: 1.3fr repeat(2, minmax(8rem, 1fr));
+    grid-template-columns: 1.3fr repeat(3, minmax(7rem, 1fr));
   }
 }
 
@@ -80,11 +80,6 @@
     min-height: auto;
   }
 
-  .hero__flag {
-    opacity: 0.45;
-    width: min(72vw, 34rem);
-  }
-
   .hero__inner {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -99,7 +94,7 @@
     justify-self: start;
   }
 
-  .device-phone--hero,
+  .hero__phone,
   .device-phone--wallet {
     width: min(100%, 18rem);
   }
@@ -110,7 +105,7 @@
     grid-template-columns: 1fr;
   }
 
-  #experience-title {
+  .experience__copy h2 {
     max-width: 100%;
   }
 
@@ -124,28 +119,18 @@
     order: -1;
   }
 
-  .dashboard-card__body {
-    grid-template-columns: 1fr;
-    padding-bottom: 2.6rem;
-  }
-
   .journey__device {
     justify-self: start;
   }
 
   .integration-row {
-    border-radius: var(--radius-lg);
     grid-template-columns: auto 1fr;
     padding: 0.8rem;
   }
 
-  .integration-row small,
-  .integration-row__meta {
+  .integration-row__tags {
     grid-column: 2;
-  }
-
-  .integration-row__meta {
-    justify-self: start;
+    justify-content: flex-start;
   }
 
   .roadmap-grid {
@@ -215,15 +200,6 @@
     grid-template-columns: 1fr;
   }
 
-  .process-grid::before {
-    bottom: 2rem;
-    height: auto;
-    left: 2.35rem;
-    right: auto;
-    top: 2rem;
-    width: 1px;
-  }
-
   .process-card {
     min-height: 10rem;
     padding-left: 4.2rem;
@@ -271,21 +247,8 @@
 }
 
 @media (max-width: 460px) {
-  .brand__name {
-    font-size: 1rem;
-  }
-
-  .brand__mark {
-    font-size: 0.74rem;
-  }
-
-  .hero__flag {
-    opacity: 0.25;
-    width: 100vw;
-  }
-
-  .quick-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .brand__logo {
+    width: 11rem;
   }
 
   .timeline-item {

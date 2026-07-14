@@ -17,67 +17,7 @@
   position: absolute;
 }
 
-.hero__flag {
-  inset: 0 0 0 auto;
-  overflow: hidden;
-  position: absolute;
-  width: min(48vw, 46rem);
-  z-index: 1;
-}
-
-.hero__flag span {
-  position: absolute;
-}
-
-.hero__flag-red {
-  background: var(--color-red);
-  clip-path: polygon(35% 0, 100% 0, 100% 24%, 51% 24%);
-  inset: 0 0 auto auto;
-  height: 44%;
-  width: 100%;
-}
-
-.hero__flag-blue {
-  background: var(--color-blue);
-  clip-path: polygon(51% 76%, 100% 76%, 100% 100%, 35% 100%);
-  inset: auto 0 0 auto;
-  height: 44%;
-  width: 100%;
-}
-
-.hero__flag-white-top {
-  background: var(--color-surface);
-  clip-path: polygon(29% 0, 39% 0, 76% 50%, 66% 50%);
-  inset: 0 0 0 auto;
-  width: 100%;
-}
-
-.hero__flag-white-bottom {
-  background: var(--color-surface);
-  clip-path: polygon(66% 50%, 76% 50%, 39% 100%, 29% 100%);
-  inset: 0 0 0 auto;
-  width: 100%;
-}
-
-.hero__flag-green {
-  background: #007a4d;
-  clip-path: polygon(14% 0, 29% 0, 65% 50%, 29% 100%, 14% 100%, 50% 50%);
-  inset: 0;
-}
-
-.hero__flag-gold {
-  background: var(--color-gold);
-  clip-path: polygon(50% 50%, 82% 9%, 92% 9%, 60% 50%, 92% 91%, 82% 91%);
-  inset: 0 0 0 auto;
-  width: 100%;
-}
-
-.hero__flag-black {
-  background: var(--color-navy-900);
-  clip-path: polygon(0 0, 39% 50%, 0 100%);
-  inset: 0 auto 0 0;
-  width: 58%;
-}
+/* The SA flag chevron is baked into HERO-bg-design.jpg, so it needs no CSS construction. */
 
 .hero__inner {
   align-items: center;
