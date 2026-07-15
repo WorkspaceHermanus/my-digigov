@@ -59,23 +59,25 @@
 .hero__trust {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.1rem;
-  margin-top: 1.7rem;
+  gap: 2.5rem;
+  margin-top: 2.2rem;
 }
 
 .hero__trust li {
   align-items: center;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.82);
   display: flex;
-  font-size: var(--font-size-xs);
-  font-weight: 800;
-  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  gap: 0.7rem;
+  line-height: 1.25;
 }
 
 .hero__trust svg {
   color: var(--color-green);
-  height: 1.2rem;
-  width: 1.2rem;
+  flex: none;
+  height: 1.85rem;
+  width: 1.85rem;
 }
 
 .hero__art {
