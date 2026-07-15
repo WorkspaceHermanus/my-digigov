@@ -10,9 +10,12 @@
   background-image:
     linear-gradient(90deg, rgba(6, 27, 54, 0.92) 0%, rgba(8, 36, 72, 0.78) 38%, rgba(8, 36, 72, 0.25) 60%, rgba(8, 36, 72, 0) 76%),
     url("../assets/images/HERO-bg-design.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* The photo layer uses `contain` (not `cover`) so the full frame is always visible,
+     never zoomed in or cropped — the navy .hero background-color shows through any
+     letterboxing, which blends seamlessly with the gradient scrim. */
+  background-position: center center, right center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, contain;
   inset: 0;
   position: absolute;
 }
@@ -80,6 +83,10 @@
   width: 1.85rem;
 }
 
+.hero__trust li span {
+  color: var(--color-green);
+}
+
 .hero__art {
   justify-self: center;
   position: relative;
@@ -139,6 +146,12 @@
 .ecosystem-card__logo img {
   max-width: 11rem;
   width: 85%;
+}
+
+/* Reviewer wants the MyDigiGovSA employee-card logo larger than the default. */
+.ecosystem-card__logo img[alt="MyDigiGovSA"] {
+  max-width: 14rem;
+  width: 100%;
 }
 
 .ecosystem-card__role {
@@ -404,12 +417,13 @@
   justify-self: center;
 }
 
-/* The mockup's journey phone is ~487px wide — far larger than the hero's. The screen is
-   laid out in rem, so zoom scales the whole device (frame and contents) together and,
-   unlike transform, still reserves the right amount of layout space. */
+/* The screen is laid out in rem, so zoom scales the whole device (frame and contents)
+   together and, unlike transform, still reserves the right amount of layout space.
+   Reviewer felt the mockup's ~487px width was out of proportion for this section —
+   scaled back down to a size that reads as a supporting device, not the focal point. */
 .device-phone--wallet {
-  width: clamp(16rem, 23vw, 19rem);
-  zoom: 1.6;
+  width: clamp(13rem, 17vw, 15rem);
+  zoom: 1.25;
 }
 
 /* Layered architecture: each row is a stack layer, joined by a downward arrow. */
@@ -433,6 +447,12 @@
   grid-template-columns: auto minmax(9rem, 1fr) minmax(9rem, 1fr) auto;
   min-height: 3.75rem;
   padding: 0.58rem 0.9rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.integration-row:hover {
+  border-color: var(--color-green);
+  box-shadow: 0 0 0 3px rgba(57, 184, 111, 0.22), var(--shadow-card-soft);
 }
 
 .integration-row__icon {
@@ -623,12 +643,56 @@
   justify-content: center;
   width: 2.8125rem;
   z-index: 1;
+  animation: step-pulse 6s ease-in-out infinite;
 }
 
-.demo-timeline__steps li.is-current span {
-  background: var(--color-green);
-  border-color: var(--color-green);
-  color: var(--color-surface);
+/* Steps glow green in sequence, one after another, looping. */
+@keyframes step-pulse {
+  0%, 16%, 100% {
+    background: var(--color-surface);
+    border-color: var(--color-border-strong);
+    color: var(--color-text-muted);
+    box-shadow: none;
+  }
+
+  4%, 12% {
+    background: var(--color-green);
+    border-color: var(--color-green);
+    color: var(--color-surface);
+    box-shadow: 0 0 0 6px rgba(57, 184, 111, 0.18), 0 0 20px rgba(57, 184, 111, 0.55);
+  }
+}
+
+.demo-timeline__steps li:nth-child(1) span {
+  animation-delay: 0s;
+}
+
+.demo-timeline__steps li:nth-child(2) span {
+  animation-delay: 1.2s;
+}
+
+.demo-timeline__steps li:nth-child(3) span {
+  animation-delay: 2.4s;
+}
+
+.demo-timeline__steps li:nth-child(4) span {
+  animation-delay: 3.6s;
+}
+
+.demo-timeline__steps li:nth-child(5) span {
+  animation-delay: 4.8s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-timeline__steps span {
+    animation: none;
+  }
+
+  .demo-timeline__steps li.is-current span {
+    background: var(--color-green);
+    border-color: var(--color-green);
+    color: var(--color-surface);
+  }
 }
 
 .demo-timeline__steps strong {

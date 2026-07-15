@@ -104,40 +104,20 @@ p {
   opacity: 0.78;
 }
 
-/* Mockup renders every section eyebrow as a pill with a leading green dot. */
+/* Reviewer prefers the original live-site eyebrow: plain uppercase text in the same
+   green as the headline accent span, not the mockup's grey pill with a dot. */
 .eyebrow {
-  align-items: center;
-  background: #eef2f5;
-  border-radius: 999px;
-  color: var(--color-navy-dark);
-  display: inline-flex;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  gap: 0.5rem;
-  letter-spacing: 0.14em;
+  color: var(--color-green);
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   line-height: 1;
-  margin-bottom: 1.35rem;
-  padding: 0.5rem 0.9rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
-.eyebrow::before {
-  background: var(--color-green);
-  border-radius: 999px;
-  content: "";
-  flex: none;
-  height: 0.3125rem;
-  width: 0.3125rem;
-}
-
-/* On the soft-grey sections the default #eef2f5 pill matches the section background and
-   disappears, so it flips to white there — as in the mockup. */
-.section--soft .eyebrow {
-  background: var(--color-surface);
-}
-
 .eyebrow--light {
-  background: rgba(255, 255, 255, 0.1);
   color: var(--color-surface);
 }
 
