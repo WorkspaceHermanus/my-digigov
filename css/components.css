@@ -552,11 +552,33 @@
   grid-template-columns: minmax(16rem, 1.4fr) repeat(3, minmax(8rem, 1fr));
 }
 
-/* Footer sits on navy: the logo is knocked out to white, directly on the navy (no badge). */
-.brand--footer .brand__logo {
-  width: 9.25rem; /* 148px */
+/* Footer sits on navy. Composite the logo image in two clipped layers: the left
+   "myDigiGov" is knocked out to white, and the right "SA" keeps its full-colour flag.
+   The split sits at 78% — the gap between "Gov" and the flag (measured at column 364/466). */
+.footer-logo {
+  aspect-ratio: 466 / 72;
+  display: block;
+  position: relative;
+  width: 11rem; /* 176px */
+}
+
+.footer-logo::before,
+.footer-logo::after {
+  background: url("../assets/images/My-DigiGovSA-Logo.png") no-repeat center / contain;
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.footer-logo::before {
+  /* "myDigiGov" knocked out to white; hide the right 22% (the flag SA) */
+  clip-path: inset(0 22% 0 0);
   filter: brightness(0) invert(1);
-  transform: none; /* cancel the header's optical nudge */
+}
+
+.footer-logo::after {
+  /* keep the "SA" flag in full colour; show only the right 22% */
+  clip-path: inset(0 0 0 78%);
 }
 
 .footer__brand p {
