@@ -65,7 +65,7 @@
 .brand__logo {
   display: block;
   height: auto;
-  width: 14.625rem;
+  width: 14rem; /* 224px — measured off the mockup */
 }
 
 .site-header {
