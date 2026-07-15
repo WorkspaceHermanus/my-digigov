@@ -66,6 +66,10 @@
   display: block;
   height: auto;
   width: 14rem; /* 224px — measured off the mockup */
+  /* The wordmark sits in the top of the PNG (the lower third is the "my" descender tail),
+     so its optical centre is ~6.5px above the image's geometric centre. Nudge down so the
+     wordmark aligns with the nav links and the Request Demo button. */
+  transform: translateY(6px);
 }
 
 .site-header {
