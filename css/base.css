@@ -130,6 +130,12 @@ p {
   width: 0.3125rem;
 }
 
+/* On the soft-grey sections the default #eef2f5 pill matches the section background and
+   disappears, so it flips to white there — as in the mockup. */
+.section--soft .eyebrow {
+  background: var(--color-surface);
+}
+
 .eyebrow--light {
   background: rgba(255, 255, 255, 0.1);
   color: var(--color-surface);
