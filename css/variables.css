@@ -40,10 +40,12 @@
   --font-size-base: clamp(0.9rem, 0.83rem + 0.3vw, 1rem); /* 16px */
   --font-size-md: clamp(1rem, 0.9rem + 0.4vw, 1.125rem); /* 18px */
   --font-size-lg: clamp(1.25rem, 1rem + 1vw, 1.625rem); /* 26px */
-  --font-size-xl: clamp(1.9rem, 1rem + 3vw, 3rem); /* 48px */
+  /* Section headings (h2) use the original live-site scale — reviewer prefers the larger,
+     more open headings over the tighter mockup-matched size. */
+  --font-size-xl: clamp(2rem, 1.42rem + 2.35vw, 3.35rem); /* up to ~53.6px */
   --font-size-hero: clamp(2.7rem, 1.2rem + 5.5vw, 5rem); /* 80px */
   --line-tight: 0.95; /* h1: 80px font, 76px pitch */
-  --line-heading: 1; /* h2: 48px font, 48px pitch — measured, not 1.1 */
+  --line-heading: 1.05;
   --line-body: 1.6;
   --button-height: 2.9rem;
   --button-height-sm: 2.35rem;

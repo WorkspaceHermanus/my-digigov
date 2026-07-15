@@ -552,23 +552,11 @@
   grid-template-columns: minmax(16rem, 1.4fr) repeat(3, minmax(8rem, 1fr));
 }
 
-/* Footer sits on navy, so the full-colour logo rides on a white badge (as in the mockup). */
-.brand--footer {
-  background: var(--color-surface);
-  border-radius: var(--radius-sm);
-  min-height: 2.625rem; /* 42px */
-  padding: 0.5rem 0.875rem;
-  width: 11rem; /* 176px */
-}
-
+/* Footer sits on navy: the logo is knocked out to white, directly on the navy (no badge). */
 .brand--footer .brand__logo {
   width: 9.25rem; /* 148px */
-}
-
-.brand--footer,
-.brand--footer .brand__mark,
-.brand--footer .brand__name {
-  color: var(--color-surface);
+  filter: brightness(0) invert(1);
+  transform: none; /* cancel the header's optical nudge */
 }
 
 .footer__brand p {

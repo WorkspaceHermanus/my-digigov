@@ -413,78 +413,63 @@
 }
 
 /* Layered architecture: each row is a stack layer, joined by a downward arrow. */
+/* Reverted to the original live-site layout (per reviewer preference): rounded rows with
+   icon, name, description and a status pill — not the mockup's layered stack with tags. */
 .integration-stack {
   display: grid;
-  gap: 2.375rem; /* 38px */
+  gap: 1.1rem;
   margin-inline: auto;
-  max-width: 894px;
+  max-width: 720px;
 }
 
 .integration-row {
   align-items: center;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: 999px;
   box-shadow: var(--shadow-card-soft);
   display: grid;
   gap: 0.85rem;
-  grid-template-columns: auto 1fr auto;
-  min-height: 4.75rem; /* 76px */
-  padding: 0.62rem 1.25rem;
-  position: relative;
+  grid-template-columns: auto minmax(9rem, 1fr) minmax(9rem, 1fr) auto;
+  min-height: 3.75rem;
+  padding: 0.58rem 0.9rem;
 }
 
-.integration-row:not(:last-child)::after {
-  bottom: -1.75rem;
-  color: var(--color-border-strong);
-  content: "↓";
-  font-size: 0.85rem;
-  left: 50%;
-  line-height: 1;
-  position: absolute;
-  transform: translateX(-50%);
-}
-
-/* Every layer carries the same sitemap glyph in the mockup, on a tinted tile. */
 .integration-row__icon {
   align-items: center;
   background: var(--color-green-light);
-  border-radius: 0.65rem;
-  color: var(--color-green-dark);
+  border-radius: 999px;
+  color: var(--color-green);
   display: flex;
-  height: 2.25rem; /* 36px */
+  height: 2.2rem;
   justify-content: center;
-  width: 2.25rem;
+  width: 2.2rem;
 }
 
 .integration-row__icon svg {
-  height: 1.15rem;
-  width: 1.15rem;
+  height: 1rem;
+  width: 1rem;
 }
 
 .integration-row strong {
   color: var(--color-navy-dark);
+  font-size: 0.86rem;
+}
+
+.integration-row small {
+  color: var(--color-text-muted);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 800;
 }
 
-.integration-row__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  justify-content: flex-end;
-}
-
-.integration-row__tags span {
+.integration-row__meta {
   background: #f4f8fb;
-  border: 1px solid var(--color-border);
   border-radius: 999px;
   color: var(--color-text-muted);
-  font-size: 0.62rem;
-  font-weight: 600;
-  padding: 0.28rem 0.6rem;
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 0.35rem 0.7rem;
+  text-align: center;
   white-space: nowrap;
 }
 
@@ -493,19 +478,19 @@
   border-color: var(--color-green);
 }
 
-.integration-row--green strong {
-  color: var(--color-surface);
-}
-
 .integration-row--green .integration-row__icon {
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--color-green-dark);
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-surface);
 }
 
-.integration-row--green .integration-row__tags span {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.28);
+.integration-row--green strong,
+.integration-row--green small,
+.integration-row--green .integration-row__meta {
   color: var(--color-surface);
+}
+
+.integration-row--green .integration-row__meta {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .value-grid {

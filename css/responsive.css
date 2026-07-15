@@ -137,13 +137,18 @@
   }
 
   .integration-row {
+    border-radius: var(--radius-lg);
     grid-template-columns: auto 1fr;
     padding: 0.8rem;
   }
 
-  .integration-row__tags {
+  .integration-row small,
+  .integration-row__meta {
     grid-column: 2;
-    justify-content: flex-start;
+  }
+
+  .integration-row__meta {
+    justify-self: start;
   }
 
   .roadmap-grid {
