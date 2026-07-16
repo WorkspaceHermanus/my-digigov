@@ -651,19 +651,19 @@
   justify-content: center;
   width: 2.8125rem;
   z-index: 1;
-  animation: step-pulse 6s ease-in-out infinite;
+  animation: step-pulse 12s ease-in-out infinite;
 }
 
 /* Steps glow green in sequence, one after another, looping. */
 @keyframes step-pulse {
-  0%, 16%, 100% {
+  0%, 18%, 100% {
     background: var(--color-surface);
     border-color: var(--color-border-strong);
     color: var(--color-text-muted);
     box-shadow: none;
   }
 
-  4%, 12% {
+  5%, 13% {
     background: var(--color-green);
     border-color: var(--color-green);
     color: var(--color-surface);
@@ -676,19 +676,19 @@
 }
 
 .demo-timeline__steps li:nth-child(2) span {
-  animation-delay: 1.2s;
-}
-
-.demo-timeline__steps li:nth-child(3) span {
   animation-delay: 2.4s;
 }
 
+.demo-timeline__steps li:nth-child(3) span {
+  animation-delay: 4.8s;
+}
+
 .demo-timeline__steps li:nth-child(4) span {
-  animation-delay: 3.6s;
+  animation-delay: 7.2s;
 }
 
 .demo-timeline__steps li:nth-child(5) span {
-  animation-delay: 4.8s;
+  animation-delay: 9.6s;
 }
 
 @media (prefers-reduced-motion: reduce) {

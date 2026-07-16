@@ -88,6 +88,13 @@
     min-height: auto;
   }
 
+  /* `contain` keeps the whole photo visible on desktop, but at phone widths it shrinks
+     the 2.32:1 image to a thin strip in a tall hero — fill the panel instead. */
+  .hero__background {
+    background-position: center center, center center;
+    background-size: cover, cover;
+  }
+
   .hero__inner {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -218,13 +225,16 @@
     grid-template-columns: 1fr;
   }
 
+  /* The icon is absolutely positioned at the card's left edge, so the card needs enough
+     left padding to clear it: 1.1rem offset + 3.625rem icon + gap. */
   .process-card {
     min-height: 10rem;
-    padding-left: 4.2rem;
+    padding-left: 5.75rem;
   }
 
   .process-card__icon {
     left: 1.1rem;
+    margin-bottom: 0;
     position: absolute;
     top: 1.25rem;
   }

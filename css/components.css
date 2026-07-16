@@ -1,4 +1,4 @@
-.button {
+﻿.button {
   align-items: center;
   border-radius: 999px;
   display: inline-flex;
@@ -65,7 +65,7 @@
 .brand__logo {
   display: block;
   height: auto;
-  width: 14rem; /* 224px — measured off the mockup */
+  width: 14rem; /* 224px â€” measured off the mockup */
   /* The wordmark sits in the top of the PNG (the lower third is the "my" descender tail),
      so its optical centre is ~6.5px above the image's geometric centre. Nudge down so the
      wordmark aligns with the nav links and the Request Demo button. */
@@ -312,17 +312,17 @@
   top: 0.2rem;
   width: 0.625rem;
   z-index: 1;
-  animation: timeline-dot-glow 4.8s ease-in-out infinite;
+  animation: timeline-dot-glow 10.8s ease-in-out infinite;
 }
 
 /* Dots light up one after another down the rail, looping. */
 @keyframes timeline-dot-glow {
-  0%, 16%, 100% {
+  0%, 18%, 100% {
     box-shadow: none;
     transform: scale(1);
   }
 
-  4%, 12% {
+  5%, 13% {
     box-shadow: 0 0 0 5px rgba(57, 184, 111, 0.22), 0 0 14px rgba(57, 184, 111, 0.65);
     transform: scale(1.3);
   }
@@ -333,23 +333,23 @@
 }
 
 .timeline-item:nth-child(2)::before {
-  animation-delay: 0.8s;
+  animation-delay: 1.8s;
 }
 
 .timeline-item:nth-child(3)::before {
-  animation-delay: 1.6s;
+  animation-delay: 3.6s;
 }
 
 .timeline-item:nth-child(4)::before {
-  animation-delay: 2.4s;
+  animation-delay: 5.4s;
 }
 
 .timeline-item:nth-child(5)::before {
-  animation-delay: 3.2s;
+  animation-delay: 7.2s;
 }
 
 .timeline-item:nth-child(6)::before {
-  animation-delay: 4s;
+  animation-delay: 9s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -599,7 +599,7 @@
 /* Footer sits on navy. Composite the logo image in two layers: the left "myDigiGov" is
    knocked out to white via ::before, and the right "SA" flag is a real nested element
    (.footer-logo__flag) rather than a pseudo-element, so it can carry its own border.
-   The split sits at 78% — the gap between "Gov" and the flag (measured at column 364/466). */
+   The split sits at 78% â€” the gap between "Gov" and the flag (measured at column 364/466). */
 .footer-logo {
   aspect-ratio: 466 / 72;
   display: block;
@@ -622,12 +622,14 @@
   inset: 0;
   left: 78%;
   background: url("../assets/images/My-DigiGovSA-Logo.png") no-repeat right center;
-  /* Scale the full logo up so only its right 22% (the flag) shows inside this box —
-     the same slice .footer-logo::after used to clip, but as its own element so it can
-     carry a real border. Scale factor is 100% / 22% ≈ 454.5%. */
+  /* Scale the full logo up so only its right 22% (the flag) shows inside this box.
+     Scale factor is 100% / 22% â‰ˆ 454.5%. */
   background-size: 454.5% 100%;
-  border: 1.5px solid rgba(255, 255, 255, 0.85);
-  border-radius: 0.3rem;
+  /* The PNG is transparent around the "SA" glyphs, so stacked drop-shadows trace a white
+     outline around the letters themselves rather than drawing a box around the flag. */
+  filter:
+    drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff)
+    drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff);
 }
 
 .footer__brand p {
