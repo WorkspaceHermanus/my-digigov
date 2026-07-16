@@ -421,9 +421,11 @@
    together and, unlike transform, still reserves the right amount of layout space.
    Reviewer felt the mockup's ~487px width was out of proportion for this section —
    scaled back down to a size that reads as a supporting device, not the focal point. */
+/* Width sets the phone's proportion (narrowing it makes the screen content wrap taller,
+   which is what threw the aspect off); zoom scales the whole device down uniformly. */
 .device-phone--wallet {
-  width: clamp(13rem, 17vw, 15rem);
-  zoom: 1.25;
+  width: 19rem; /* 304px — the mockup's phone proportion */
+  zoom: 1.15; /* smaller than the mockup's 1.6, per review */
 }
 
 /* Layered architecture: each row is a stack layer, joined by a downward arrow. */
@@ -453,6 +455,12 @@
 .integration-row:hover {
   border-color: var(--color-green);
   box-shadow: 0 0 0 3px rgba(57, 184, 111, 0.22), var(--shadow-card-soft);
+}
+
+/* The green row needs a light glow — a green one would be invisible on green. */
+.integration-row--green:hover {
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.28), var(--shadow-card-soft);
 }
 
 .integration-row__icon {
